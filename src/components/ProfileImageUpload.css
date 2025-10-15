@@ -1,0 +1,178 @@
+.profile-image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid #e2e8f0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.profile-image-wrapper:hover {
+  transform: scale(1.05);
+  border-color: #667eea;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.profile-image-wrapper.uploading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.profile-image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.camera-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.change-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.upload-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #48bb78, #68d391);
+  transition: width 0.3s ease;
+  border-radius: 0 0 50% 50%;
+}
+
+.progress-text {
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #fc8181;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(252, 129, 129, 0.4);
+}
+
+.remove-image-btn:hover {
+  background: #f56565;
+  transform: scale(1.1);
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid #feb2b2;
+  max-width: 250px;
+}
+
+.upload-help {
+  text-align: center;
+  color: #718096;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.upload-help p {
+  margin: 2px 0;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .profile-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .camera-icon {
+    font-size: 20px;
+  }
+  
+  .change-text {
+    font-size: 10px;
+  }
+}
