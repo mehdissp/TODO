@@ -104,6 +104,9 @@ export const authAPI = {
   
   // آپدیت پروفایل کاربر
   updateProfile: (profileData) => api.put('/Auth/profile', profileData),
+
+    // گرفتن منوها از سرور
+  getMenus: () => api.get('/Auth/GetMenusForUi'),
   
   // آپلود عکس پروفایل
   uploadProfileImage: (formData, onUploadProgress) => {
